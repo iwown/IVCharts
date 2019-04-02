@@ -9,6 +9,8 @@
 #ifndef IVCharts_h
 #define IVCharts_h
 
+
 #import "IVRriScatter.h"
+#import "IVSportsCurve.h"
 
 #endif /* IVCharts_h */

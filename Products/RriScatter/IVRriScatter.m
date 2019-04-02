@@ -8,8 +8,7 @@
 
 #import "IVRriScatter.h"
 
-@interface IVRriScatter()
-{
+@interface IVRriScatter() {
     CGFloat _gapScale;
 }
 
@@ -27,8 +26,6 @@
     return self;
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -55,14 +52,14 @@
     
     CGFloat x0 = leftWidth;
     CGFloat y0 = totalLength - bottomHeight;
-    
-    CGContextSetRGBFillColor (context, self.pointColor.red, self.pointColor.green, self.pointColor.blue, self.pointColor.alpha);//设置填充颜色
+    //设置填充颜色
+    CGContextSetRGBFillColor (context, self.pointColor.red, self.pointColor.green, self.pointColor.blue, self.pointColor.alpha);
     for (NSValue *value in self.dataSource) {
         CGPoint point = value.CGPointValue;
         CGFloat x = x0 + point.x * hrGap;
         CGFloat y = y0 - point.y * hrGap;
-        
-        CGContextAddArc(context, x, y, 2, 0, 2*M_PI, 0); //添加一个圆
+        //添加一个圆
+        CGContextAddArc(context, x, y, 2, 0, 2*M_PI, 0);
         CGContextDrawPath(context, kCGPathFill);
     }
 }
@@ -87,7 +84,7 @@
     CGFloat unitWidth = _gapScale;
     CGFloat leftWidth = _gapScale * 0.7;
     CGFloat bottomHeight = _gapScale * 0.7;
-    for (int i = 1; i < 5; i++) {
+    for (int i = 0; i < 5; i++) {
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, leftWidth, bottomHeight)];
         CGFloat hetight = self.frame.size.height - (bottomHeight * 0.5);
         CGFloat lWidth = leftWidth + i * unitWidth;
@@ -114,7 +111,8 @@
     CGFloat rightWidth = _gapScale * 0.3;
     for (int i = 0; i < 5; i++) {
         CGMutablePathRef path = CGPathCreateMutable();
-        CGPathMoveToPoint(path, nil, leftWidth, topHeight + i*unitHeight);//移动到指定位置（设置路径起点）
+        //移动到指定位置（设置路径起点）
+        CGPathMoveToPoint(path, nil, leftWidth, topHeight + i*unitHeight);
         CGPathAddLineToPoint(path, nil, self.frame.size.width-rightWidth, topHeight + i*unitHeight);
         CGContextAddPath(context, path);
         CFRelease(path);
@@ -135,7 +133,7 @@
     CGFloat bottomHeight = _gapScale * 0.7;
     for (int i = 0; i < 5; i++) {
         CGMutablePathRef path = CGPathCreateMutable();
-        CGPathMoveToPoint(path, nil, leftWidth + i*unitHeight, topHeight);//移动到指定位置（设置路径起点）
+        CGPathMoveToPoint(path, nil, leftWidth + i*unitHeight, topHeight);
         CGPathAddLineToPoint(path, nil, leftWidth + i*unitHeight, self.frame.size.height - bottomHeight);
         CGContextAddPath(context, path);
         CFRelease(path);

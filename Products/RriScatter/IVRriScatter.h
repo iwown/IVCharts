@@ -6,16 +6,9 @@
 //  Copyright © 2019年 Iwown. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ConstAndStruct.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-typedef struct {
-    float red;
-    float green;
-    float blue;
-    float alpha;
-} IVSColor;
 
 @interface IVRriScatter : UIView
 
