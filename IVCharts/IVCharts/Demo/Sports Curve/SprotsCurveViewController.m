@@ -38,6 +38,7 @@
         [mArr addObject:[NSValue valueWithCGPoint:point]];
     }
     [_curve setDataSource:mArr];
+    [_curve reload];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

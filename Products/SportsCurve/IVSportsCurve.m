@@ -32,6 +32,10 @@
     int  _lineNumber;
 }
 
+- (void)reload {
+    [self setNeedsDisplay];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
@@ -70,7 +74,6 @@
         [self parseYMaxAndMin];
         [self addLeftView:[self getLeftTitles]];
     }
-    [self setNeedsDisplay];
 }
 
 - (NSArray *)getBottomTitles {
