@@ -30,6 +30,10 @@
 - (void)setDataSource:(NSArray <NSValue *>*)arr;
 - (void)addLeftView:(NSArray <NSString *>*)leftTitles;
 - (void)addBottomView:(NSArray <NSString *>*)bottomTitles;
+
+/*Call this method if you want to refresh the graph*/
+- (void)reload;
+
 @end
 
 @interface IVSCDashMarkLine : UIView

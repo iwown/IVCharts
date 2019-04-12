@@ -7,7 +7,7 @@
 //
 #import "ViewController.h"
 #import "RriScatterViewController.h"
-
+#import "SprotsCurveViewController.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -28,7 +28,7 @@
 
 - (void)initData {
     _dataSource = [[NSMutableArray alloc] initWithCapacity:0];
-    NSArray *arr = @[@"Rri Scatter"];
+    NSArray *arr = @[@"Rri Scatter",@"Sports Curve"];
     [_dataSource addObjectsFromArray:arr];
 }
 
@@ -64,8 +64,11 @@
     
     UIViewController *rsVC;
     switch (indexPath.row) {
-            case 0:
+        case 0:
             rsVC = [[RriScatterViewController alloc] init];
+            break;
+        case 1:
+            rsVC = [[SprotsCurveViewController alloc] init];
             break;
             
         default:

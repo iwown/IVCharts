@@ -16,6 +16,7 @@
 		D6273E83224C759D0081BFEE /* IVChartsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6273E82224C759D0081BFEE /* IVChartsTests.m */; };
 		D6273E91224C79350081BFEE /* IVRriScatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D6273E90224C79350081BFEE /* IVRriScatter.m */; };
 		D6273E97224C7B870081BFEE /* RriScatterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6273E96224C7B870081BFEE /* RriScatterViewController.m */; };
+		D6289F0522608B87002B9588 /* SprotsCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6289F0422608B87002B9588 /* SprotsCurveViewController.m */; };
 		D6C98F89225366900083D03A /* IVSportsCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C98F88225366900083D03A /* IVSportsCurve.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		D6273E92224C79750081BFEE /* IVCharts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVCharts.h; sourceTree = "<group>"; };
 		D6273E95224C7B870081BFEE /* RriScatterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RriScatterViewController.h; sourceTree = "<group>"; };
 		D6273E96224C7B870081BFEE /* RriScatterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RriScatterViewController.m; sourceTree = "<group>"; };
+		D6289F0322608B87002B9588 /* SprotsCurveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SprotsCurveViewController.h; sourceTree = "<group>"; };
+		D6289F0422608B87002B9588 /* SprotsCurveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SprotsCurveViewController.m; sourceTree = "<group>"; };
 		D63D03172252F64E000478E3 /* ConstAndStruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstAndStruct.h; sourceTree = "<group>"; };
 		D6C98F87225366900083D03A /* IVSportsCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVSportsCurve.h; sourceTree = "<group>"; };
 		D6C98F88225366900083D03A /* IVSportsCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVSportsCurve.m; sourceTree = "<group>"; };
@@ -120,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				D6273E92224C79750081BFEE /* IVCharts.h */,
-				D6C98F862253662F0083D03A /* SportsCurve */,
 				D6DF3BAA2252F60300E24EFC /* Const&&Struct */,
+				D6C98F862253662F0083D03A /* SportsCurve */,
 				D6273E8E224C78F60081BFEE /* RriScatter */,
 			);
 			name = Products;
@@ -140,6 +143,7 @@
 		D6273E93224C7B4B0081BFEE /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D6289F0222608B53002B9588 /* Sports Curve */,
 				D6273E94224C7B630081BFEE /* Rri Scatter */,
 			);
 			path = Demo;
@@ -152,6 +156,15 @@
 				D6273E96224C7B870081BFEE /* RriScatterViewController.m */,
 			);
 			path = "Rri Scatter";
+			sourceTree = "<group>";
+		};
+		D6289F0222608B53002B9588 /* Sports Curve */ = {
+			isa = PBXGroup;
+			children = (
+				D6289F0322608B87002B9588 /* SprotsCurveViewController.h */,
+				D6289F0422608B87002B9588 /* SprotsCurveViewController.m */,
+			);
+			path = "Sports Curve";
 			sourceTree = "<group>";
 		};
 		D6C98F862253662F0083D03A /* SportsCurve */ = {
@@ -276,6 +289,7 @@
 				D6273E79224C759D0081BFEE /* main.m in Sources */,
 				D6273E6B224C75990081BFEE /* AppDelegate.m in Sources */,
 				D6273E91224C79350081BFEE /* IVRriScatter.m in Sources */,
+				D6289F0522608B87002B9588 /* SprotsCurveViewController.m in Sources */,
 				D6273E97224C7B870081BFEE /* RriScatterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
