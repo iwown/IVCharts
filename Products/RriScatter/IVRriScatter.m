@@ -63,7 +63,7 @@
         CGFloat x = x0 + point.x * hrGap;
         CGFloat y = y0 - point.y * hrGap;
         //添加一个圆
-        CGContextAddArc(context, x, y, 2, 0, 2*M_PI, 0);
+        CGContextAddArc(context, x, y, 0.8, 0, 2*M_PI, 0);
         CGContextDrawPath(context, kCGPathFill);
     }
 }
