@@ -19,6 +19,8 @@
 		D6289F0522608B87002B9588 /* SprotsCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6289F0422608B87002B9588 /* SprotsCurveViewController.m */; };
 		D6289F0A22609092002B9588 /* SleepBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6289F0922609092002B9588 /* SleepBarViewController.m */; };
 		D6289F0D226090FB002B9588 /* IVSleepBars.m in Sources */ = {isa = PBXBuildFile; fileRef = D6289F0C226090FB002B9588 /* IVSleepBars.m */; };
+		D668294B22A679B8002489F3 /* IVTimeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D668294A22A679B8002489F3 /* IVTimeBar.m */; };
+		D668295022A771F0002489F3 /* TimeBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D668294F22A771F0002489F3 /* TimeBarViewController.m */; };
 		D6C98F89225366900083D03A /* IVSportsCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C98F88225366900083D03A /* IVSportsCurve.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,10 @@
 		D6289F0B226090FB002B9588 /* IVSleepBars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVSleepBars.h; sourceTree = "<group>"; };
 		D6289F0C226090FB002B9588 /* IVSleepBars.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVSleepBars.m; sourceTree = "<group>"; };
 		D63D03172252F64E000478E3 /* ConstAndStruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstAndStruct.h; sourceTree = "<group>"; };
+		D668294922A679B8002489F3 /* IVTimeBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVTimeBar.h; sourceTree = "<group>"; };
+		D668294A22A679B8002489F3 /* IVTimeBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVTimeBar.m; sourceTree = "<group>"; };
+		D668294E22A771F0002489F3 /* TimeBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeBarViewController.h; sourceTree = "<group>"; };
+		D668294F22A771F0002489F3 /* TimeBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeBarViewController.m; sourceTree = "<group>"; };
 		D6C98F87225366900083D03A /* IVSportsCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVSportsCurve.h; sourceTree = "<group>"; };
 		D6C98F88225366900083D03A /* IVSportsCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVSportsCurve.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +139,7 @@
 				D6C98F862253662F0083D03A /* SportsCurve */,
 				D6273E8E224C78F60081BFEE /* RriScatter */,
 				D6289F062260902F002B9588 /* SleepBars */,
+				D668294822A67983002489F3 /* TimeBar */,
 			);
 			name = Products;
 			path = ../../Products;
@@ -150,6 +157,7 @@
 		D6273E93224C7B4B0081BFEE /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D668294D22A771C9002489F3 /* Time Bar */,
 				D6289F072260904B002B9588 /* Sleep Bar */,
 				D6289F0222608B53002B9588 /* Sports Curve */,
 				D6273E94224C7B630081BFEE /* Rri Scatter */,
@@ -191,6 +199,24 @@
 				D6289F0922609092002B9588 /* SleepBarViewController.m */,
 			);
 			path = "Sleep Bar";
+			sourceTree = "<group>";
+		};
+		D668294822A67983002489F3 /* TimeBar */ = {
+			isa = PBXGroup;
+			children = (
+				D668294922A679B8002489F3 /* IVTimeBar.h */,
+				D668294A22A679B8002489F3 /* IVTimeBar.m */,
+			);
+			path = TimeBar;
+			sourceTree = "<group>";
+		};
+		D668294D22A771C9002489F3 /* Time Bar */ = {
+			isa = PBXGroup;
+			children = (
+				D668294E22A771F0002489F3 /* TimeBarViewController.h */,
+				D668294F22A771F0002489F3 /* TimeBarViewController.m */,
+			);
+			path = "Time Bar";
 			sourceTree = "<group>";
 		};
 		D6C98F862253662F0083D03A /* SportsCurve */ = {
@@ -313,9 +339,11 @@
 				D6289F0A22609092002B9588 /* SleepBarViewController.m in Sources */,
 				D6273E6E224C75990081BFEE /* ViewController.m in Sources */,
 				D6289F0D226090FB002B9588 /* IVSleepBars.m in Sources */,
+				D668294B22A679B8002489F3 /* IVTimeBar.m in Sources */,
 				D6C98F89225366900083D03A /* IVSportsCurve.m in Sources */,
 				D6273E79224C759D0081BFEE /* main.m in Sources */,
 				D6273E6B224C75990081BFEE /* AppDelegate.m in Sources */,
+				D668295022A771F0002489F3 /* TimeBarViewController.m in Sources */,
 				D6273E91224C79350081BFEE /* IVRriScatter.m in Sources */,
 				D6289F0522608B87002B9588 /* SprotsCurveViewController.m in Sources */,
 				D6273E97224C7B870081BFEE /* RriScatterViewController.m in Sources */,
@@ -477,7 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J4RUNBVTXN;
+				DEVELOPMENT_TEAM = L855ZMKEYR;
 				INFOPLIST_FILE = IVCharts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,7 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J4RUNBVTXN;
+				DEVELOPMENT_TEAM = L855ZMKEYR;
 				INFOPLIST_FILE = IVCharts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
