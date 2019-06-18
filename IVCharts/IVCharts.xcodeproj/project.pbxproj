@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60B11C622B8E6E1008EAC66 /* IVRateLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B11C522B8E6E1008EAC66 /* IVRateLine.m */; };
+		D60B11CA22B8E87C008EAC66 /* RateLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B11C922B8E87C008EAC66 /* RateLineViewController.m */; };
 		D6273E6B224C75990081BFEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6273E6A224C75990081BFEE /* AppDelegate.m */; };
 		D6273E6E224C75990081BFEE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6273E6D224C75990081BFEE /* ViewController.m */; };
 		D6273E71224C75990081BFEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6273E6F224C75990081BFEE /* Main.storyboard */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D60B11C422B8E6E1008EAC66 /* IVRateLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVRateLine.h; sourceTree = "<group>"; };
+		D60B11C522B8E6E1008EAC66 /* IVRateLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVRateLine.m; sourceTree = "<group>"; };
+		D60B11C822B8E87C008EAC66 /* RateLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RateLineViewController.h; sourceTree = "<group>"; };
+		D60B11C922B8E87C008EAC66 /* RateLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RateLineViewController.m; sourceTree = "<group>"; };
 		D6273E66224C75990081BFEE /* IVCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IVCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6273E69224C75990081BFEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6273E6A224C75990081BFEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -86,6 +92,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D60B11C322B8E688008EAC66 /* RateLine */ = {
+			isa = PBXGroup;
+			children = (
+				D60B11C422B8E6E1008EAC66 /* IVRateLine.h */,
+				D60B11C522B8E6E1008EAC66 /* IVRateLine.m */,
+			);
+			path = RateLine;
+			sourceTree = "<group>";
+		};
+		D60B11C722B8E85D008EAC66 /* Rate Line */ = {
+			isa = PBXGroup;
+			children = (
+				D60B11C822B8E87C008EAC66 /* RateLineViewController.h */,
+				D60B11C922B8E87C008EAC66 /* RateLineViewController.m */,
+			);
+			path = "Rate Line";
+			sourceTree = "<group>";
+		};
 		D6273E5D224C75990081BFEE = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +164,7 @@
 				D6273E8E224C78F60081BFEE /* RriScatter */,
 				D6289F062260902F002B9588 /* SleepBars */,
 				D668294822A67983002489F3 /* TimeBar */,
+				D60B11C322B8E688008EAC66 /* RateLine */,
 			);
 			name = Products;
 			path = ../../Products;
@@ -157,6 +182,7 @@
 		D6273E93224C7B4B0081BFEE /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D60B11C722B8E85D008EAC66 /* Rate Line */,
 				D668294D22A771C9002489F3 /* Time Bar */,
 				D6289F072260904B002B9588 /* Sleep Bar */,
 				D6289F0222608B53002B9588 /* Sports Curve */,
@@ -346,6 +372,8 @@
 				D668295022A771F0002489F3 /* TimeBarViewController.m in Sources */,
 				D6273E91224C79350081BFEE /* IVRriScatter.m in Sources */,
 				D6289F0522608B87002B9588 /* SprotsCurveViewController.m in Sources */,
+				D60B11C622B8E6E1008EAC66 /* IVRateLine.m in Sources */,
+				D60B11CA22B8E87C008EAC66 /* RateLineViewController.m in Sources */,
 				D6273E97224C7B870081BFEE /* RriScatterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
