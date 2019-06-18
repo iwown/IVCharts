@@ -9,6 +9,8 @@
 #import "RriScatterViewController.h"
 #import "SprotsCurveViewController.h"
 #import "SleepBarViewController.h"
+#import "Demo/Rate Line/RateLineViewController.h"
+#import "Demo/Time Bar/TimeBarViewController.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -29,7 +31,8 @@
 
 - (void)initData {
     _dataSource = [[NSMutableArray alloc] initWithCapacity:0];
-    NSArray *arr = @[@"Rri Scatter",@"Sports Curve",@"Sleep Bar"];
+    NSArray *arr = @[@"Rri Scatter",@"Sports Curve",@"Sleep Bar",
+                     @"Time Bar",@"Rate Line"];
     [_dataSource addObjectsFromArray:arr];
 }
 
@@ -73,6 +76,12 @@
             break;
         case 2:
             rsVC = [[SleepBarViewController alloc] init];
+            break;
+        case 3:
+            rsVC = [[TimeBarViewController alloc] init];
+            break;
+        case 4:
+            rsVC = [[RateLineViewController alloc] init];
             break;
             
         default:
