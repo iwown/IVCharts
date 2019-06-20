@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**! Number of horizontal dash line, like scaleplate, color is light gray; default is null*/
 @property (nonatomic, assign)NSInteger dashLineNumber;
 
+/**! Full line at bottom view, color is .white. default is NO, */
+@property (nonatomic, assign)BOOL bottomFullLine;
 
 - (void)reload;
 
