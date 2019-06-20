@@ -59,14 +59,15 @@
     CGFloat lengths[] = {2,5};
     CGContextSetLineDash(context, 0, lengths,2);
     
-    CGFloat unitHeight = self.frame.size.width/_dashLineNumber;
+    CGFloat unitHeight = self.frame.size.height/_dashLineNumber;
     for (int i = 0; i < _dashLineNumber+1; i++) {
         CGMutablePathRef path = CGPathCreateMutable();
         CGPathMoveToPoint(path, nil, 0,0 + i*unitHeight*1);//移动到指定位置（设置路径起点）
         CGPathAddLineToPoint(path, nil, self.frame.size.width, 0 + i*unitHeight);
         CGContextAddPath(context, path);
         CFRelease(path);
-        if (i == _dashLineNumber) {
+        if (_bottomFullLine && i == _dashLineNumber) {
+            CGContextSetRGBStrokeColor(context, 0xFF/255.0, 0xFF/255.0, 0xFF/255.0, 1);
             CGContextSetLineDash(context, 0, lengths,0);
         }
         CGContextStrokePath(context);
