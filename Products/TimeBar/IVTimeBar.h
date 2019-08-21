@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  柱子数组
  */
-@property (nonatomic,strong) NSArray <NSNumber *>*dataSource;
+@property (nonatomic,strong) NSArray <NSNumber *> *dataSource;
 
 /**
  *  最大值，即最上面的点的值，

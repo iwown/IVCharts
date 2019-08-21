@@ -23,6 +23,9 @@
 		D6289F0D226090FB002B9588 /* IVSleepBars.m in Sources */ = {isa = PBXBuildFile; fileRef = D6289F0C226090FB002B9588 /* IVSleepBars.m */; };
 		D668294B22A679B8002489F3 /* IVTimeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D668294A22A679B8002489F3 /* IVTimeBar.m */; };
 		D668295022A771F0002489F3 /* TimeBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D668294F22A771F0002489F3 /* TimeBarViewController.m */; };
+		D6B58584230CF26B006E233E /* IVWeightLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B58583230CF26B006E233E /* IVWeightLine.m */; };
+		D6B58588230CF299006E233E /* WeightLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B58587230CF299006E233E /* WeightLineViewController.m */; };
+		D6B5858B230CF6C7006E233E /* IVCoinLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B58589230CF6C7006E233E /* IVCoinLine.m */; };
 		D6C98F89225366900083D03A /* IVSportsCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C98F88225366900083D03A /* IVSportsCurve.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +73,12 @@
 		D668294A22A679B8002489F3 /* IVTimeBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVTimeBar.m; sourceTree = "<group>"; };
 		D668294E22A771F0002489F3 /* TimeBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeBarViewController.h; sourceTree = "<group>"; };
 		D668294F22A771F0002489F3 /* TimeBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeBarViewController.m; sourceTree = "<group>"; };
+		D6B58582230CF26B006E233E /* IVWeightLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVWeightLine.h; sourceTree = "<group>"; };
+		D6B58583230CF26B006E233E /* IVWeightLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVWeightLine.m; sourceTree = "<group>"; };
+		D6B58586230CF299006E233E /* WeightLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeightLineViewController.h; sourceTree = "<group>"; };
+		D6B58587230CF299006E233E /* WeightLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeightLineViewController.m; sourceTree = "<group>"; };
+		D6B58589230CF6C7006E233E /* IVCoinLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVCoinLine.m; sourceTree = "<group>"; };
+		D6B5858A230CF6C7006E233E /* IVCoinLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVCoinLine.h; sourceTree = "<group>"; };
 		D6C98F87225366900083D03A /* IVSportsCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVSportsCurve.h; sourceTree = "<group>"; };
 		D6C98F88225366900083D03A /* IVSportsCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVSportsCurve.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +174,7 @@
 				D6289F062260902F002B9588 /* SleepBars */,
 				D668294822A67983002489F3 /* TimeBar */,
 				D60B11C322B8E688008EAC66 /* RateLine */,
+				D6B58581230CF236006E233E /* WeightLine */,
 			);
 			name = Products;
 			path = ../../Products;
@@ -182,6 +192,7 @@
 		D6273E93224C7B4B0081BFEE /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D6B58585230CF281006E233E /* Weight Line */,
 				D60B11C722B8E85D008EAC66 /* Rate Line */,
 				D668294D22A771C9002489F3 /* Time Bar */,
 				D6289F072260904B002B9588 /* Sleep Bar */,
@@ -243,6 +254,26 @@
 				D668294F22A771F0002489F3 /* TimeBarViewController.m */,
 			);
 			path = "Time Bar";
+			sourceTree = "<group>";
+		};
+		D6B58581230CF236006E233E /* WeightLine */ = {
+			isa = PBXGroup;
+			children = (
+				D6B5858A230CF6C7006E233E /* IVCoinLine.h */,
+				D6B58589230CF6C7006E233E /* IVCoinLine.m */,
+				D6B58582230CF26B006E233E /* IVWeightLine.h */,
+				D6B58583230CF26B006E233E /* IVWeightLine.m */,
+			);
+			path = WeightLine;
+			sourceTree = "<group>";
+		};
+		D6B58585230CF281006E233E /* Weight Line */ = {
+			isa = PBXGroup;
+			children = (
+				D6B58586230CF299006E233E /* WeightLineViewController.h */,
+				D6B58587230CF299006E233E /* WeightLineViewController.m */,
+			);
+			path = "Weight Line";
 			sourceTree = "<group>";
 		};
 		D6C98F862253662F0083D03A /* SportsCurve */ = {
@@ -368,6 +399,9 @@
 				D668294B22A679B8002489F3 /* IVTimeBar.m in Sources */,
 				D6C98F89225366900083D03A /* IVSportsCurve.m in Sources */,
 				D6273E79224C759D0081BFEE /* main.m in Sources */,
+				D6B58588230CF299006E233E /* WeightLineViewController.m in Sources */,
+				D6B5858B230CF6C7006E233E /* IVCoinLine.m in Sources */,
+				D6B58584230CF26B006E233E /* IVWeightLine.m in Sources */,
 				D6273E6B224C75990081BFEE /* AppDelegate.m in Sources */,
 				D668295022A771F0002489F3 /* TimeBarViewController.m in Sources */,
 				D6273E91224C79350081BFEE /* IVRriScatter.m in Sources */,
