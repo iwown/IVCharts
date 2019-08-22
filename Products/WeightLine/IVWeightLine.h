@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../Const&&Struct/ConstAndStruct.h"
+#import "ConstAndStruct.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

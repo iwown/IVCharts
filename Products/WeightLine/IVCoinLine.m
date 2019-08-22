@@ -7,7 +7,7 @@
 //
 
 #import "IVCoinLine.h"
-#import "../Const&&Struct/ConstAndStruct.h"
+#import "ConstAndStruct.h"
 
 #define BEZIER_PATH_GRANULARITY 40
 #define BEZIER_PATH_WIDTH 2
