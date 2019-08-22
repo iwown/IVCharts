@@ -14,14 +14,24 @@
 
 
 @implementation IVCoinLine
+{
+    CGFloat         _width;
+    CGFloat         _height;
+    CGFloat         _yMin;
+    CGFloat         _yMax;
+    CGFloat         _gapW;
+    CGFloat         _gapH;
+    CGFloat         _target;
+    NSArray         *_arr;
+}
 
-- (instancetype)initWithFrame:(CGRect)frame gapW:(CGFloat)gapW {
+- (instancetype)initWithFrame:(CGRect)frame gapW:(CGFloat)gapW maxY:(CGFloat)maxY {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
         _width = frame.size.width;
         _height = frame.size.height;
         _gapW = gapW;
-        _yMax = 150;
+        _yMax = maxY;
         _yMin = 10;
     }
     return self;
@@ -57,8 +67,6 @@
         y = hY * (1- ([_arr[0] floatValue] - _yMin)/(_yMax - _yMin)) +gap;
     }
     
-    NSLog(@"[_arr[0] floatValue]======%.2f", [_arr[0] floatValue]);
-    
     UIBezierPath *lineGraph = [UIBezierPath bezierPath];
     lineGraph.lineCapStyle = kCGLineCapRound;
     lineGraph.lineJoinStyle = kCGLineJoinRound;
@@ -74,18 +82,22 @@
         } else {
             y = hY * (1- ([_arr[i] floatValue] - _yMin)/(_yMax - _yMin)) + gap;
         }
+        NSLog(@"======>>>> %f:%f",x,y);
         if (i > 0) {
-            [lineGraph addCurveToPoint:CGPointMake(x, y) controlPoint1:CGPointMake((x - tempx) / 2 + tempx, tempy) controlPoint2:CGPointMake((x-tempx)/2+tempx, y)];
+            /*折线*/
+            [lineGraph addLineToPoint:CGPointMake(x, y)];
+            /*平缓曲线*/
+//            [lineGraph addCurveToPoint:CGPointMake(x, y) controlPoint1:CGPointMake((x - tempx) / 2 + tempx, tempy) controlPoint2:CGPointMake((x-tempx)/2+tempx, y)];
         }
         CoinLabel *coin = [[CoinLabel alloc] initWithFrame:CGRectMake(x-3, y-3, 6, 6)];
-        [coin setStrokeColor:[UIColor colorWithRed:0x1c/255.0 green:0x57/255.0 blue:0xcf/255.0 alpha:1.0]];
-        [coin setFillColor:[UIColor whiteColor]];
+        [coin setStrokeColor:_coinColor];
+        [coin setFillColor:_coinColor];
         [self addSubview:coin];
         tempx = x;
         tempy = y;
-    }
     
-    [[UIColor whiteColor] setStroke];
+    }
+    [_lineColor setStroke];
     [lineGraph stroke];
 }
 

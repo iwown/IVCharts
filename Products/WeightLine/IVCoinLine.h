@@ -9,25 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface IVCoinLine : UIView
-{
-    CGFloat         _width;
-    CGFloat         _height;
-    CGFloat         _yMin;
-    CGFloat         _yMax;
-    CGFloat         _gapW;
-    CGFloat         _gapH;
-    CGFloat         _target;
-    NSArray         *_arr;
-    
-    UIColor         *_lineColor;
-    UIColor         *_pointColor;
-    UIColor         *_pointFillColor;
-    UIColor         *_pointStrokeColor;
-}
 
-@property (nonatomic) NSArray *arr;
+@property (nonatomic, strong) UIColor *lineColor;
 
-- (instancetype)initWithFrame:(CGRect)frame gapW:(CGFloat)gapW;
+@property (nonatomic, strong) UIColor *coinColor;
+
+@property (nonatomic, strong) NSArray *arr;
+
+- (instancetype)initWithFrame:(CGRect)frame gapW:(CGFloat)gapW maxY:(CGFloat)maxY;
 - (void)setArr:(NSArray *)arr;
 - (void)setMaxY:(CGFloat)maxY;
 - (void)drawLine;

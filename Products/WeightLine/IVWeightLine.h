@@ -16,12 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol IVWeightLineViewDelegate <NSObject>
 
 @optional
-- (id)grayLabelDidAnimationAtIndex:(NSInteger)index;
 
-- (void)scrollViewAnimationIsEndingAtIndex:(NSInteger)index;
-
+- (void)ivWeightLineScrollAtIndex:(NSInteger)index;
 - (CGFloat)ivWeightLineTargetGoal;
 - (NSString *)ivWeightLineTargetGoalText;
+- (NSString *)ivWeightLineCurrentTargetGapText;
 
 @end
 
@@ -29,20 +28,27 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IVWeightLine : UIView
 
 
-@property (nonatomic, strong)NSArray   *dataArr;
-@property (nonatomic, assign)NSInteger rawDataCount;
 @property (nonatomic ,assign)id<IVWeightLineViewDelegate> delegate;
 
-
-@property (nonatomic ,strong) NSArray <NSValue *>*dataSource;
+@property (nonatomic ,strong) NSArray <NSNumber *>*dataSource;
 
 /**! 屏显数据个数*/
 @property (nonatomic ,assign) NSInteger showNumber;
+@property (nonatomic ,assign) BOOL showGoal;
 
 @property (nonatomic ,assign) IVSColor textColor;
+@property (nonatomic ,assign) IVSColor textGrayColor;
+@property (nonatomic ,assign) IVSColor lineColor;
+@property (nonatomic ,assign) IVSColor coinColor;
+@property (nonatomic ,assign) IVSColor highLightColor;
+
+@property (nonatomic ,assign) IVSColor goalColor;
+@property (nonatomic ,assign) IVSColor bottomLineColor;
 
 @property (nonatomic ,strong) NSArray <NSString *>*leftLabels;
 @property (nonatomic ,strong) NSArray <NSString *>*rightLabels;
+/*Default is -1, means no high light label, High */
+@property (nonatomic ,assign) NSInteger rightHighLightIndex;
 
 - (void)reload;
 

@@ -25,29 +25,24 @@
 }
 
 - (void)initUI {
-    self.view.backgroundColor = [UIColor whiteColor];
-    _line = [[IVWeightLine alloc] initWithFrame:CGRectMake(0, 100, 375, 260)];
+    self.view.backgroundColor = [UIColor greenColor];
+    _line = [[IVWeightLine alloc] initWithFrame:CGRectMake(0, 100, 375, 150)];
     [_line setLeftLabels:@[@"100",@"80",@"60",@"40",@"20"]];
     [_line setRightLabels:@[@"",@"很重",@"重",@"一般",@"瘦"]];
-
-//    _line.dashLineNumber = 3;
-//    _line.bpmMax = 150;
     [self.view addSubview:_line];
 }
 
 - (void)reloadData {
     NSMutableArray *mArr = [[NSMutableArray alloc] initWithCapacity:0];
-    for (int i = 0; i < 5; i ++) {
-        int x = 1 * i;
+    for (int i = 0; i < 25; i ++) {
         int y = arc4random()%50 + 50;
-        CGPoint point = CGPointMake(x, y);
-        [mArr addObject:[NSValue valueWithCGPoint:point]];
+        [mArr addObject:@(y)];
     }
     [_line setDataSource:mArr];
     [_line reload];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (void)btnClickAt:(id)sender {
     [self reloadData];
 }
 

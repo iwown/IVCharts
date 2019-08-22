@@ -14,6 +14,7 @@
 #import "IVRateLine.h"
 #import "IVTimeBar.h"
 #import "IVSleepBars.h"
+#import "IVWeightLine.h"
 
 
 #endif /* IVCharts_h */
