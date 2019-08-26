@@ -55,6 +55,7 @@
 }
 
 - (void)drawLine {
+    NSLog(@"%s",__FUNCTION__);
     CGFloat hY = _height - 20;
     CGFloat gap = 10;
     CGFloat w = _gapW;

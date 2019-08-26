@@ -70,7 +70,7 @@
     _scrollHeight = _selfHeight;
     _scrollWidth = _selfWidth;
     _gapW = (_selfWidth / 9);
-    _gapLeft = 50;
+    _gapLeft = 0;
 }
 
 - (void)initUI {
@@ -111,6 +111,12 @@
     __uiBottomColor = [UIColor colorWithRed:bottomLineColor.red green:bottomLineColor.green blue:bottomLineColor.blue alpha:bottomLineColor.alpha];
 }
 
+- (void)setLeftLabels:(NSArray<NSString *> *)leftLabels {
+    _leftLabels = leftLabels;
+    _gapLeft = 50;
+    _scrollWidth = _selfWidth - 100;
+}
+
 - (void)drawUI {
     CGFloat leftGap = (_selfWidth - _scrollWidth)/2;
     CGFloat topGap = (_selfHeight - _scrollHeight)/2;
@@ -126,11 +132,16 @@
     _grayLab = [[UILabel alloc] init];
     [_grayLab setFrame:CGRectMake((_gapW-10) * 0.5, 0, 10, 10)];
     [_grayLab.layer setCornerRadius:5];
-    [_grayLab setBackgroundColor:__uiHighLightColor];
     _grayLab.layer.masksToBounds = YES;
-    _grayLab.layer.borderColor = __uiHighLightColor.CGColor;
     _grayLab.layer.borderWidth = 3;
     [img addSubview:_grayLab];
+}
+
+- (void)reDrawScrollView {
+    CGFloat leftGap = (_selfWidth - _scrollWidth)/2;
+    CGFloat topGap = (_selfHeight - _scrollHeight)/2;
+
+    [_scroll setFrame:CGRectMake(leftGap, topGap, _scrollWidth, _scrollHeight)];
 }
 
 - (void)reDrawGoalGap {
@@ -179,8 +190,8 @@
     if (!_showGoal) {
         return;
     }
-    CGFloat width = _scroll.frame.size.width;
-    CGFloat height = _scroll.frame.size.height;
+    CGFloat width = _scrollWidth;
+    CGFloat height = _scrollHeight;
     
     CGFloat _target = [_delegate ivWeightLineTargetGoal];
     CGFloat maxY = _coin.yMax;
@@ -207,8 +218,8 @@
 }
 
 - (void)reDrawLine {
-    CGFloat width = _scroll.frame.size.width;
-    CGFloat height = _scroll.frame.size.height;
+    CGFloat width = _scrollWidth;
+    CGFloat height = _scrollHeight;
     
     _coin = [[IVCoinLine alloc] initWithFrame:CGRectMake(width / 2, 0, _gapW * (_dataSource.count - 1), height) gapW:_gapW maxY:height];
     _coin.tag = REMOVE_TAG;
@@ -223,6 +234,9 @@
     
     [self showGrayLabelAniamtion:_scroll.bounds.size.height index:_dataSource.count -1];
     [self endAnimation:_scroll];
+    
+    [_grayLab setBackgroundColor:__uiHighLightColor];
+    _grayLab.layer.borderColor = __uiHighLightColor.CGColor;
 }
 
 - (void)reDrawLabels {
@@ -267,6 +281,7 @@
             [vi removeFromSuperview];
         }
     }
+    [self reDrawScrollView];
     [self reDrawLabels];
     [self reDrawLine];
     [self reDrawGoal];
