@@ -35,6 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**! 屏显数据个数*/
 @property (nonatomic ,assign) NSInteger showNumber;
 @property (nonatomic ,assign) BOOL showGoal;
+@property (nonatomic ,assign) NSInteger maxY;
 
 @property (nonatomic ,assign) IVSColor textColor;
 @property (nonatomic ,assign) IVSColor textGrayColor;
