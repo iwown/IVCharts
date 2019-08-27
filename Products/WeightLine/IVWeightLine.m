@@ -179,7 +179,7 @@
     UILabel *_spaceLabel = [[UILabel alloc] initWithFrame:CGRectMake(_selfWidth / 2 + 5, topY, 100, 30)];
     _spaceLabel.center = CGPointMake(_spaceLabel.center.x, topY+gapHeight/2);
     _spaceLabel.font = [UIFont systemFontOfSize:13];
-    _spaceLabel.textColor = [UIColor whiteColor];
+    _spaceLabel.textColor = __uiHighLightColor;
     _spaceLabel.tag = REDRAW_TAG;
     _spaceLabel.text = [_delegate ivWeightLineCurrentTargetGapText];
     

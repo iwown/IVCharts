@@ -27,8 +27,8 @@
 - (void)initUI {
     self.view.backgroundColor = [UIColor greenColor];
     _line = [[IVWeightLine alloc] initWithFrame:CGRectMake(0, 100, 375, 150)];
-    [_line setLeftLabels:@[@"100",@"80",@"60",@"40",@"20"]];
-    [_line setRightLabels:@[@"",@"很重",@"重",@"一般",@"瘦"]];
+//    [_line setLeftLabels:@[@"100",@"80",@"60",@"40",@"20"]];
+//    [_line setRightLabels:@[@"",@"很重",@"重",@"一般",@"瘦"]];
     [_line setShowGoal:YES];
     
     IVSColor coinColor = {0xA9/255.0,0xDC/255.0,0x9B/255.0,1};
@@ -44,10 +44,6 @@
     }
     [_line setDataSource:mArr];
     [_line reload];
-}
-
-- (void)btnClickAt:(id)sender {
-    [self reloadData];
 }
 
 /*
