@@ -83,6 +83,15 @@
     _dataSource = dataSource;
 }
 
+- (void)setMaxY:(NSInteger)maxY {
+    NSMutableArray *mArr = [[NSMutableArray alloc] initWithCapacity:0];
+    CGFloat unitLine = _scrollHeight/maxY;
+    for (NSNumber *num in _dataSource) {
+        [mArr addObject:@(num.intValue * unitLine)];
+    }
+    _dataSource = mArr;
+}
+
 - (void)setTextColor:(IVSColor)textColor {
     __uiTextColor = [UIColor colorWithRed:textColor.red green:textColor.green blue:textColor.blue alpha:textColor.alpha];
 }
@@ -140,7 +149,6 @@
 - (void)reDrawScrollView {
     CGFloat leftGap = (_selfWidth - _scrollWidth)/2;
     CGFloat topGap = (_selfHeight - _scrollHeight)/2;
-
     [_scroll setFrame:CGRectMake(leftGap, topGap, _scrollWidth, _scrollHeight)];
 }
 
@@ -172,7 +180,7 @@
         gapHeight = targetY - theWeightY;
     }
     UIView *centerLine = [[UIView alloc] initWithFrame:CGRectMake((_selfWidth - 1) / 2, topY, 1, gapHeight)];
-    [self drawDashLine:centerLine lineLength:2 lineSpacing:6 lineColor:[UIColor redColor] direction:1];
+    [self drawDashLine:centerLine lineLength:2 lineSpacing:6 lineColor:__uiGoalColor direction:1];
     [centerLine setTag:REDRAW_TAG];
     [self addSubview:centerLine];
     
@@ -232,7 +240,7 @@
     
     [_coin setArr:_dataSource];
     
-    [self showGrayLabelAniamtion:_scroll.bounds.size.height index:_dataSource.count -1];
+    [self showGrayLabelAniamtion:_scroll.bounds.size.height index:_scrollIndex];
     [self endAnimation:_scroll];
     
     [_grayLab setBackgroundColor:__uiHighLightColor];
@@ -299,7 +307,6 @@
     if (shangX >= _dataSource.count || shangX < 0 || _scrollIndex == shangX) {
         return;
     }
-    _scrollIndex = shangX;
     [self showGrayLabelAniamtion:scrollView.bounds.size.height index:shangX];
 }
 
@@ -314,7 +321,13 @@
     [_grayLab setCenter:CGPointMake(_grayLab.center.x,y)];
     [self reDrawGoalGap];
     
-    [_delegate ivWeightLineScrollAtIndex:_scrollIndex];
+    if (_scrollIndex == index) {
+        return;
+    }
+    _scrollIndex = index;
+    if ([_delegate respondsToSelector:@selector(ivWeightLineScrollAtIndex:)]) {
+        [_delegate ivWeightLineScrollAtIndex:_scrollIndex];
+    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
