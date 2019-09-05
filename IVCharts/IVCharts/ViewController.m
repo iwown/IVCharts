@@ -12,6 +12,7 @@
 #import "Demo/Rate Line/RateLineViewController.h"
 #import "Demo/Time Bar/TimeBarViewController.h"
 #import "Demo/Weight Line/WeightLineViewController.h"
+#import "Demo/Weigth Figure/WeightFigureViewController.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -33,7 +34,8 @@
 - (void)initData {
     _dataSource = [[NSMutableArray alloc] initWithCapacity:0];
     NSArray *arr = @[@"Rri Scatter",@"Sports Curve",@"Sleep Bar",
-                     @"Time Bar",@"Rate Line",@"Weight Line"];
+                     @"Time Bar",@"Rate Line",@"Weight Line",
+                     @"Weight Figure"];
     [_dataSource addObjectsFromArray:arr];
 }
 
@@ -87,7 +89,9 @@
         case 5:
             rsVC = [[WeightLineViewController alloc] init];
             break;
-            
+        case 6:
+            rsVC = [[WeightFigureViewController alloc] init];
+            break;
         default:
             break;
     }
