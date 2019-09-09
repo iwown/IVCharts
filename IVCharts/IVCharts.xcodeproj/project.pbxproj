@@ -27,7 +27,7 @@
 		D6B58588230CF299006E233E /* WeightLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B58587230CF299006E233E /* WeightLineViewController.m */; };
 		D6B5858B230CF6C7006E233E /* IVCoinLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B58589230CF6C7006E233E /* IVCoinLine.m */; };
 		D6C98F89225366900083D03A /* IVSportsCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C98F88225366900083D03A /* IVSportsCurve.m */; };
-		D6D12A442320B94700B1D342 /* WeightFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D12A432320B94700B1D342 /* WeightFigure.m */; };
+		D6D12A442320B94700B1D342 /* IVWeightFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D12A432320B94700B1D342 /* IVWeightFigure.m */; };
 		D6D12A482320EB2500B1D342 /* WeightFigureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D12A472320EB2500B1D342 /* WeightFigureViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -83,8 +83,8 @@
 		D6B5858A230CF6C7006E233E /* IVCoinLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVCoinLine.h; sourceTree = "<group>"; };
 		D6C98F87225366900083D03A /* IVSportsCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVSportsCurve.h; sourceTree = "<group>"; };
 		D6C98F88225366900083D03A /* IVSportsCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVSportsCurve.m; sourceTree = "<group>"; };
-		D6D12A422320B94700B1D342 /* WeightFigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeightFigure.h; sourceTree = "<group>"; };
-		D6D12A432320B94700B1D342 /* WeightFigure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeightFigure.m; sourceTree = "<group>"; };
+		D6D12A422320B94700B1D342 /* IVWeightFigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVWeightFigure.h; sourceTree = "<group>"; };
+		D6D12A432320B94700B1D342 /* IVWeightFigure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVWeightFigure.m; sourceTree = "<group>"; };
 		D6D12A462320EB2500B1D342 /* WeightFigureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeightFigureViewController.h; sourceTree = "<group>"; };
 		D6D12A472320EB2500B1D342 /* WeightFigureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeightFigureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -296,8 +296,8 @@
 		D6D12A412320B90900B1D342 /* WeightFigure */ = {
 			isa = PBXGroup;
 			children = (
-				D6D12A422320B94700B1D342 /* WeightFigure.h */,
-				D6D12A432320B94700B1D342 /* WeightFigure.m */,
+				D6D12A422320B94700B1D342 /* IVWeightFigure.h */,
+				D6D12A432320B94700B1D342 /* IVWeightFigure.m */,
 			);
 			path = WeightFigure;
 			sourceTree = "<group>";
@@ -420,7 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6D12A482320EB2500B1D342 /* WeightFigureViewController.m in Sources */,
-				D6D12A442320B94700B1D342 /* WeightFigure.m in Sources */,
+				D6D12A442320B94700B1D342 /* IVWeightFigure.m in Sources */,
 				D6289F0A22609092002B9588 /* SleepBarViewController.m in Sources */,
 				D6273E6E224C75990081BFEE /* ViewController.m in Sources */,
 				D6289F0D226090FB002B9588 /* IVSleepBars.m in Sources */,

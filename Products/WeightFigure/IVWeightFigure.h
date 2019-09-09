@@ -1,5 +1,5 @@
 //
-//  WeightFigure.h
+//  IVWeightFigure.h
 //  IVCharts
 //
 //  Created by A$CE on 2019/9/5.
@@ -15,11 +15,23 @@ typedef struct {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WeightFigure : UIView
+@interface IVWeightFigure : UIView
 
 @property (nonatomic ,assign) SW_figure weightFigure;
 
 - (void)reloadData;
+
+/**! NSLocalizeString
+ @"体内脂肪含量:"
+ @"运动员体制"
+ @"丰满"
+ @"肥胖"
+ @"肌肉型体质"
+ @"太瘦"
+ @"正常"
+ @"偏瘦体型"
+ @"隐藏性\n肥胖"
+ */
 
 @end
 

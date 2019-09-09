@@ -1,14 +1,14 @@
 //
-//  WeightFigure.m
+//  IVWeightFigure.m
 //  IVCharts
 //
 //  Created by A$CE on 2019/9/5.
 //  Copyright © 2019 Iwown. All rights reserved.
 //
 
-#import "WeightFigure.h"
+#import "IVWeightFigure.h"
 
-@implementation WeightFigure
+@implementation IVWeightFigure
 {
     CGFloat __selfWidth;
     CGFloat __selfHeight;

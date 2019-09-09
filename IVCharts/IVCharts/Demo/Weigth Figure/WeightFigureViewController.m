@@ -7,11 +7,11 @@
 //
 
 #import "WeightFigureViewController.h"
-#import "WeightFigure.h"
+#import "IVWeightFigure.h"
 
 @interface WeightFigureViewController ()
 {
-    WeightFigure *_figure;
+    IVWeightFigure *_figure;
 }
 @end
 
@@ -26,7 +26,7 @@
 
 - (void)initUI {
     self.view.backgroundColor = [UIColor whiteColor];
-    _figure = [[WeightFigure alloc] initWithFrame:CGRectMake(0, 100, 320, 295)];
+    _figure = [[IVWeightFigure alloc] initWithFrame:CGRectMake(0, 100, 320, 295)];
     [self.view addSubview:_figure];
 }
 

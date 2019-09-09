@@ -304,7 +304,7 @@
         shangX = (shangX +1);
     }
     
-    if (shangX >= _dataSource.count || shangX < 0 || _scrollIndex == shangX) {
+    if (shangX >= _dataSource.count || shangX < 0) {
         return;
     }
     [self showGrayLabelAniamtion:scrollView.bounds.size.height index:shangX];
@@ -321,9 +321,6 @@
     [_grayLab setCenter:CGPointMake(_grayLab.center.x,y)];
     [self reDrawGoalGap];
     
-    if (_scrollIndex == index) {
-        return;
-    }
     _scrollIndex = index;
     if ([_delegate respondsToSelector:@selector(ivWeightLineScrollAtIndex:)]) {
         [_delegate ivWeightLineScrollAtIndex:_scrollIndex];
