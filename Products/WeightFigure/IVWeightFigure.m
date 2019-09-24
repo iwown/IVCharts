@@ -202,6 +202,7 @@ static int BG_CHART_TAG = 1409;
     [labelJ setFont:[UIFont systemFontOfSize:14]];
     [labelJ setTextColor:[UIColor whiteColor]];
     [labelJ setTag:BG_CHART_TAG + 9];
+    [labelJ setNumberOfLines:0];
     [_bgView addSubview:labelJ];
     
     //Draw Labels;
@@ -331,7 +332,14 @@ static WFRange rangers[10] = {
     if (tag == -1) {
         NSLog(@"这里有bug，快去查！！！");
     }
+    _figureBody = [self figureBodyArr][tag];
     return tag;
+}
+
+- (NSArray *)figureBodyArr {
+    return @[@"运动员体制",@"丰满",@"肥胖",@"肌肉型体质",
+             @"太瘦",@"正常",@"丰满",@"太瘦",@"偏瘦体型",
+             @"隐藏性\n肥胖"];
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -376,3 +384,4 @@ static WFRange rangers[10] = {
 
 
 @end
+

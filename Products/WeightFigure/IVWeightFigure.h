@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IVWeightFigure : UIView
 
 @property (nonatomic ,assign) SW_figure weightFigure;
+@property (nonatomic ,copy ,readonly) NSString *figureBody;
 
 - (void)reloadData;
 
