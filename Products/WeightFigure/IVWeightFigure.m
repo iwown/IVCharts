@@ -331,8 +331,9 @@ static WFRange rangers[10] = {
     }
     if (tag == -1) {
         NSLog(@"这里有bug，快去查！！！");
+    }else {
+        _figureBody = [self figureBodyArr][tag];
     }
-    _figureBody = [self figureBodyArr][tag];
     return tag;
 }
 
