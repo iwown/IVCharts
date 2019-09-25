@@ -46,6 +46,11 @@
     [_line reload];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    int random = arc4random()%20;
+    [_line scrollToIndex:random];
+}
+
 /*
 #pragma mark - Navigation
 

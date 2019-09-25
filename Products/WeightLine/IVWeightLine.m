@@ -45,6 +45,11 @@
     [self setNeedsDisplay];
 }
 
+- (void)scrollToIndex:(NSInteger)index {
+    _scrollIndex = index;
+    [self reload];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
