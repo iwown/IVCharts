@@ -128,7 +128,10 @@
 - (void)setLeftLabels:(NSArray<NSString *> *)leftLabels {
     _leftLabels = leftLabels;
     _gapLeft = 50;
-    _scrollWidth = _selfWidth - 100;
+    if ((int)_scrollWidth != ((int)_selfWidth - 100)) {
+        _scrollWidth = _selfWidth - 100;
+        [self reDrawScrollView];
+    }
 }
 
 - (void)drawUI {
@@ -152,9 +155,13 @@
 }
 
 - (void)reDrawScrollView {
+    CGFloat width = _scrollWidth;
+    CGFloat height = _scrollHeight;
     CGFloat leftGap = (_selfWidth - _scrollWidth)/2;
     CGFloat topGap = (_selfHeight - _scrollHeight)/2;
-    [_scroll setFrame:CGRectMake(leftGap, topGap, _scrollWidth, _scrollHeight)];
+    [_scroll setFrame:CGRectMake(leftGap, topGap, width, height)];
+    [_scroll setContentOffset:CGPointMake((_dataSource.count-1) *_gapW, _scroll.bounds.origin.y)];
+    [_scroll setContentSize:CGSizeMake(_gapW * (_dataSource.count - 1) + width, height)];
 }
 
 - (void)reDrawGoalGap {
@@ -239,10 +246,7 @@
     _coin.lineColor = __uiLineColor;
     _coin.coinColor = __uiCoinColor;
     [_scroll addSubview:_coin];
-    
-    [_scroll setContentOffset:CGPointMake((_dataSource.count-1) *_gapW, _scroll.bounds.origin.y)];
-    [_scroll setContentSize:CGSizeMake(_gapW * (_dataSource.count - 1) + width, height)];
-    
+
     [_coin setArr:_dataSource];
     
     [self showGrayLabelAniamtion:_scroll.bounds.size.height index:_scrollIndex];
@@ -294,10 +298,10 @@
             [vi removeFromSuperview];
         }
     }
-    [self reDrawScrollView];
     [self reDrawLabels];
     [self reDrawLine];
     [self reDrawGoal];
+    NSLog(@"%s",__func__);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
