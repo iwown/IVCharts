@@ -222,12 +222,16 @@ static int BG_CHART_TAG = 1409;
     }
     
     CGFloat gapRight = __selfWidth * 0.0533;
-    CGFloat gapHeightR = (__selfWidth-grayLabelWidth-gapRight)/5;
-    for (int j = 1; j < 6; j ++) {
-        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth + (j-1) * gapHeightR, gapHeightL + chartHeight, gapHeightR, 30)];
-        lab.text = [NSString stringWithFormat:@"%ld%%",(long)(j+1)*5];
+    CGFloat gapHeightR = (__selfWidth-grayLabelWidth-gapRight)/6;
+    for (int j = 0; j < 7; j ++) {
+        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth + (j+0.5) * gapHeightR, gapHeightL + chartHeight, gapHeightR, 30)];
+        if (j == 0) {
+            lab.text = @"";
+        }else {
+            lab.text = [NSString stringWithFormat:@"%ld%%",(long)(j+1)*5];
+         }
         lab.textColor = __uiGrayColor;
-        lab.textAlignment = NSTextAlignmentRight;
+        lab.textAlignment = NSTextAlignmentCenter;
         lab.font = [UIFont systemFontOfSize:12];
         [self addSubview:lab];
     }
