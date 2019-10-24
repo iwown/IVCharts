@@ -222,14 +222,10 @@ static int BG_CHART_TAG = 1409;
     }
     
     CGFloat gapRight = __selfWidth * 0.0533;
-    CGFloat gapHeightR = (__selfWidth-grayLabelWidth-gapRight)/6;
-    for (int j = 0; j < 7; j ++) {
+    CGFloat gapHeightR = (__selfWidth-grayLabelWidth-gapRight)/5;
+    for (int j = 0; j < 6; j ++) {
         UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth + (j+0.5) * gapHeightR, gapHeightL + chartHeight, gapHeightR, 30)];
-        if (j == 0) {
-            lab.text = @"";
-        }else {
-            lab.text = [NSString stringWithFormat:@"%ld%%",(long)(j+1)*5];
-         }
+        lab.text = [NSString stringWithFormat:@"%ld%%",(long)(j+2)*5];
         lab.textColor = __uiGrayColor;
         lab.textAlignment = NSTextAlignmentCenter;
         lab.font = [UIFont systemFontOfSize:12];
@@ -260,8 +256,10 @@ static int REMOVE_TAG = 1298;
         point_cy = gapHeightL;
     }
     
-    if (_weightFigure.body_fat < 30) {
-        point_cx = grayLabelWidth + chartWidth/30.0 * _weightFigure.body_fat;
+    if (_weightFigure.body_fat <= 10) {
+        point_cx = grayLabelWidth + (length60/10.0 * _weightFigure.body_fat);
+    }else if (_weightFigure.body_fat < 30) {
+        point_cx = grayLabelWidth + length60 + (chartWidth - length60)/20.0 * (_weightFigure.body_fat - 10);
     }else {
         point_cx = grayLabelWidth + chartWidth;
     }
@@ -389,4 +387,5 @@ static WFRange rangers[10] = {
 
 
 @end
+
 
