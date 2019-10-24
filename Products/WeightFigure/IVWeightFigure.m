@@ -315,7 +315,14 @@ static WFRange rangers[10] = {
 
 - (NSInteger)pointLabelTag {
     CGFloat bimValue = _weightFigure.bmi;
-    CGFloat bf_XValue = _weightFigure.body_fat / 30.0;
+    CGFloat bf_XValue = 0;
+    
+    if (_weightFigure.body_fat <= 10) {
+        bf_XValue = (length60/chartWidth * _weightFigure.body_fat/10.0);
+    }else if (_weightFigure.body_fat < 30) {
+        bf_XValue = (length60 + (_weightFigure.body_fat-10)/20.0*(chartWidth-length60))/chartWidth;
+    }
+    
     if (bf_XValue > 1) {
         bf_XValue = 1;
     }
