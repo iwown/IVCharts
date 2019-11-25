@@ -8,8 +8,7 @@
 
 #import "IVWeightFigure.h"
 
-@implementation IVWeightFigure
-{
+@implementation IVWeightFigure {
     CGFloat __selfWidth;
     CGFloat __selfHeight;
     
@@ -79,33 +78,7 @@
 static int BG_CHART_TAG = 1409;
 - (void)initUI {
     self.backgroundColor = [UIColor clearColor];
-    
-    //Draw Title Label
-    UILabel *bmiTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, grayLabelWidth, gapHeightL)];
-    [bmiTitle setTextAlignment:NSTextAlignmentRight];
-    [bmiTitle setTextColor:__uiGrayColor];
-    [bmiTitle setText:@"BMI:"];
-    [bmiTitle setFont:[UIFont systemFontOfSize:14]];
-    [self addSubview:bmiTitle];
-    
-    _bmiLabel = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth, 0, grayLabelWidth, gapHeightL)];
-    [_bmiLabel setTextAlignment:NSTextAlignmentCenter];
-    [_bmiLabel setTextColor:__uiTextColor];
-    [_bmiLabel setFont:[UIFont systemFontOfSize:14]];
-    [self addSubview:_bmiLabel];
-    
-    UILabel *bfTitle = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth, gapHeightL + grayLabelHeight + chartHeight, 100, gapHeightL)];
-    [bfTitle setTextAlignment:NSTextAlignmentLeft];
-    [bfTitle setTextColor:__uiGrayColor];
-    [bfTitle setText:NSLocalizedString(@"体内脂肪含量:", nil)];
-    [bfTitle setFont:[UIFont systemFontOfSize:14]];
-    [self addSubview:bfTitle];
-    
-    _bfLabel = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth+100, gapHeightL + grayLabelHeight + chartHeight, 80, gapHeightL)];
-    [_bfLabel setTextAlignment:NSTextAlignmentLeft];
-    [_bfLabel setTextColor:__uiTextColor];
-    [_bfLabel setFont:[UIFont systemFontOfSize:14]];
-    [self addSubview:_bfLabel];
+    [self drawTitles];
     
     //Draw Charts BG
     _bgView = [[UIView alloc] initWithFrame:CGRectMake(grayLabelWidth, gapHeightL, chartWidth, chartHeight)];
@@ -233,6 +206,85 @@ static int BG_CHART_TAG = 1409;
     }
 }
 
+- (void)setTitleStyle:(SW_Titles_Style)titleStyle {
+    if (titleStyle == SW_Titles_Style_normal) {
+        return;
+    }
+    for (UIView *vi in self.subviews) {
+        if (vi.tag == s_tag_titles) {
+            [vi removeFromSuperview];
+        }
+    }
+    [self reDrawTitles];
+}
+
+static int s_tag_titles = 231;
+- (void)drawTitles {
+    //Draw Title Label
+    UILabel *bmiTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, grayLabelWidth, gapHeightL)];
+    [bmiTitle setTextAlignment:NSTextAlignmentRight];
+    [bmiTitle setTextColor:__uiGrayColor];
+    [bmiTitle setText:@"BMI:"];
+    [bmiTitle setFont:[UIFont systemFontOfSize:14]];
+    [bmiTitle setTag:s_tag_titles];
+    [self addSubview:bmiTitle];
+   
+    _bmiLabel = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth, 0, grayLabelWidth, gapHeightL)];
+    [_bmiLabel setTextAlignment:NSTextAlignmentCenter];
+    [_bmiLabel setTextColor:__uiTextColor];
+    [_bmiLabel setFont:[UIFont systemFontOfSize:14]];
+    [_bmiLabel setTag:s_tag_titles];
+    [self addSubview:_bmiLabel];
+   
+    UILabel *bfTitle = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth, gapHeightL + grayLabelHeight + chartHeight, 100, gapHeightL)];
+    [bfTitle setTextAlignment:NSTextAlignmentLeft];
+    [bfTitle setTextColor:__uiGrayColor];
+    [bfTitle setText:NSLocalizedString(@"体内脂肪含量:", nil)];
+    [bfTitle setFont:[UIFont systemFontOfSize:14]];
+    [bfTitle setTag:s_tag_titles];
+    [self addSubview:bfTitle];
+   
+    _bfLabel = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth+100, gapHeightL + grayLabelHeight + chartHeight, 80, gapHeightL)];
+    [_bfLabel setTextAlignment:NSTextAlignmentLeft];
+    [_bfLabel setTextColor:__uiTextColor];
+    [_bfLabel setFont:[UIFont systemFontOfSize:14]];
+    [_bfLabel setTag:s_tag_titles];
+    [self addSubview:_bfLabel];
+}
+
+- (void)reDrawTitles {
+    UIView *bmiView = [[UIView alloc] initWithFrame:CGRectMake(-grayLabelWidth+gapHeightL*0.5-2, __selfHeight * 0.4, grayLabelWidth * 2, gapHeightL)];
+    [self addSubview:bmiView];
+    //Draw Title Label
+    UILabel *bmiTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, grayLabelWidth, gapHeightL)];
+    [bmiTitle setTextAlignment:NSTextAlignmentRight];
+    [bmiTitle setTextColor:__uiTextColor];
+    [bmiTitle setText:@"BMI:"];
+    [bmiTitle setFont:[UIFont systemFontOfSize:14]];
+    [bmiView addSubview:bmiTitle];
+  
+    _bmiLabel = [[UILabel alloc] initWithFrame:CGRectMake(grayLabelWidth, 0, grayLabelWidth,   gapHeightL)];
+    [_bmiLabel setTextAlignment:NSTextAlignmentCenter];
+    [_bmiLabel setTextColor:__uiGrayColor];
+    [_bmiLabel setFont:[UIFont systemFontOfSize:14]];
+    [bmiView addSubview:_bmiLabel];
+    
+    bmiView.transform = CGAffineTransformRotate(bmiView.transform, -M_PI_2);
+      
+    UILabel *bfTitle = [[UILabel alloc] initWithFrame:CGRectMake(__selfWidth*0.5-100, gapHeightL + grayLabelHeight + chartHeight, 100, gapHeightL)];
+    [bfTitle setTextAlignment:NSTextAlignmentLeft];
+    [bfTitle setTextColor:__uiTextColor];
+    [bfTitle setText:NSLocalizedString(@"体内脂肪含量:", nil)];
+    [bfTitle setFont:[UIFont systemFontOfSize:14]];
+    [self addSubview:bfTitle];
+  
+    _bfLabel = [[UILabel alloc] initWithFrame:CGRectMake(__selfWidth*0.5, gapHeightL + grayLabelHeight + chartHeight, 80, gapHeightL)];
+    [_bfLabel setTextAlignment:NSTextAlignmentLeft];
+    [_bfLabel setTextColor:__uiGrayColor];
+    [_bfLabel setFont:[UIFont systemFontOfSize:14]];
+    [self addSubview:_bfLabel];
+}
+
 static int REMOVE_TAG = 1298;
 - (void)reDrawPoint {
     for (UIView *vi in self.subviews) {
@@ -352,13 +404,6 @@ static WFRange rangers[10] = {
              @"隐藏性\n肥胖"];
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    
-}
-
-
 @end
 
 
@@ -391,7 +436,6 @@ static WFRange rangers[10] = {
     }
     CGContextStrokePath(context);//把线在界面上绘制出来
 }
-
 
 @end
 

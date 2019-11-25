@@ -26,12 +26,13 @@
 
 - (void)initUI {
     self.view.backgroundColor = [UIColor whiteColor];
-    _figure = [[IVWeightFigure alloc] initWithFrame:CGRectMake(0, 100, 320, 295)];
+    _figure = [[IVWeightFigure alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 365)];
+    [_figure setTitleStyle:SW_Titles_Style_side];
     [self.view addSubview:_figure];
 }
 
 - (void)reloadData {
-    SW_figure fig = {22.43,20.0};
+    SW_figure fig = {22.43,22.0};
     [_figure setWeightFigure:fig];
     [_figure reloadData];
 }

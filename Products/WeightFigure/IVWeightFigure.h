@@ -13,12 +13,19 @@ typedef struct {
     float body_fat; /*0-100*/
 }SW_figure;
 
+typedef enum {
+    SW_Titles_Style_normal = 0,
+    SW_Titles_Style_side,
+} SW_Titles_Style;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IVWeightFigure : UIView
 
 @property (nonatomic ,assign) SW_figure weightFigure;
 @property (nonatomic ,copy ,readonly) NSString *figureBody;
+
+@property (nonatomic ,assign) SW_Titles_Style titleStyle;
 
 - (void)reloadData;
 
