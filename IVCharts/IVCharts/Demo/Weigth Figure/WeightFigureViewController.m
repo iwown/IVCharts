@@ -32,7 +32,7 @@
 }
 
 - (void)reloadData {
-    SW_figure fig = {22.43,22.0};
+    SW_figure fig = {22.43,0};
     [_figure setWeightFigure:fig];
     [_figure reloadData];
 }
