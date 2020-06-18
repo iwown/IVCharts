@@ -5,7 +5,7 @@
 //  Created by A$CE on 2019/8/21.
 //  Copyright © 2019 Iwown. All rights reserved.
 //
-
+#import "WeightFigureViewController.h"
 #import "WeightLineViewController.h"
 #import "IVWeightLine.h"
 
@@ -34,6 +34,17 @@
     IVSColor coinColor = {0xA9/255.0,0xDC/255.0,0x9B/255.0,1};
     [_line setHighLightColor:coinColor];
     [self.view addSubview:_line];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(100, 500, 100, 40)];
+    [btn setTitle:@"NEXT" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+- (void)btnClick:(id)sender {
+    WeightFigureViewController *fVC = [WeightFigureViewController new];
+    [self.navigationController pushViewController:fVC animated:YES];
 }
 
 - (void)reloadData {
@@ -47,8 +58,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    int random = arc4random()%20;
-    [_line scrollToIndex:random];
+    int rom = arc4random()%20;
+    [_line scrollToIndex:rom];
 }
 
 /*

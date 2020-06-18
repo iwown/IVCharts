@@ -1,8 +1,8 @@
 //
-//  IVSleepBars.h
+//  IVSleepLineArea.h
 //  IVCharts
 //
-//  Created by A$CE on 2019/4/12.
+//  Created by A$CE on 2019/12/24.
 //  Copyright © 2019 Iwown. All rights reserved.
 //
 
@@ -10,9 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 @class GGSBSleep;
-@interface IVSleepBars : UIView
+@interface IVSleepLineArea : UIView
 
 @property (nonatomic ,strong) UIColor *textColor;
 
@@ -21,6 +20,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)reload;
 
 @end
-
 
 NS_ASSUME_NONNULL_END

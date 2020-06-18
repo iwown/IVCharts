@@ -5,12 +5,12 @@
 //  Created by A$CE on 2019/4/12.
 //  Copyright © 2019 Iwown. All rights reserved.
 //
-#import "ConstAndStruct.h"
 #import "IVSleepBars.h"
+#import "GGSBSleep.h"
+#import "ConstAndStruct.h"
 
 
-@interface IVSleepBars ()
-{
+@interface IVSleepBars () {
     UIView *horizonLine;
     CGFloat _sb_width;
     CGFloat _sb_height;
@@ -101,7 +101,6 @@
     }
     
     //画纵轴
-//    _sleepModel.segment;
     if (_sleepModel.segment.count < 2) {
         NSLog(@"数据太少，画不出来");
         return;
@@ -120,18 +119,21 @@
         // 1-start;2-end;3-deep;4-light,placed,6-wake
         CGFloat xS = _gap_margin + (x-start) * length_unit;
         CGFloat wS = activity * length_unit;
-        CGFloat hS = 130;
+        CGFloat hS = 0;
         if (preSleepType == 3) {
-            hS=130;
+            hS=100;
             tmp.backgroundColor=[UIColor colorWithRed:0x2b/255.0 green:0x0f/255.0 blue:0x53/255.0 alpha:1];
         }
         else if (preSleepType == 4) {
-            hS=80;
+            hS=60;
             tmp.backgroundColor=[UIColor colorWithRed:0xb4/255.0 green:0x81/255.0 blue:0xff/255.0 alpha:1];
         }
         else if (preSleepType == 6) {
-            hS=30;
+            hS=20;
             tmp.backgroundColor=[UIColor colorWithRed:0xff/255.0 green:0xba/255.0 blue:0x4a/255.0 alpha:1];
+        }else if (preSleepType == 7) {
+            hS=140;
+            tmp.backgroundColor=[UIColor colorWithRed:0x9f/255.0 green:0x0a/255.0 blue:0x01/255.0 alpha:1];
         }
         CGFloat yS = _sb_height - _gap_margin - hS;
         tmp.frame = CGRectMake(xS, yS, wS, hS);
@@ -141,19 +143,4 @@
 
 
 @end
-
-
-
-@implementation GGSBItem
-
-
-@end
-
-
-
-@implementation GGSBSleep
-
-
-@end
-
 

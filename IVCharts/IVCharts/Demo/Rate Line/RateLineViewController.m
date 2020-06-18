@@ -37,7 +37,10 @@
     NSMutableArray *mArr = [[NSMutableArray alloc] initWithCapacity:0];
     for (int i = 0; i < 144; i ++) {
         int x = 1 * i;
-        int y = arc4random()%100 + 50;
+        int y = 0; //arc4random()%100 + 50;
+        if (i == 50) {
+            y = 98;
+        }
         CGPoint point = CGPointMake(x, y);
         [mArr addObject:[NSValue valueWithCGPoint:point]];
     }

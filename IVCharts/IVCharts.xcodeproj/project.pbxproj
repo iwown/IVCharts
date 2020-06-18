@@ -23,6 +23,8 @@
 		D6289F0D226090FB002B9588 /* IVSleepBars.m in Sources */ = {isa = PBXBuildFile; fileRef = D6289F0C226090FB002B9588 /* IVSleepBars.m */; };
 		D668294B22A679B8002489F3 /* IVTimeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D668294A22A679B8002489F3 /* IVTimeBar.m */; };
 		D668295022A771F0002489F3 /* TimeBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D668294F22A771F0002489F3 /* TimeBarViewController.m */; };
+		D67A099423B1B14E001E9AF0 /* IVSleepLineArea.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A099323B1B14E001E9AF0 /* IVSleepLineArea.m */; };
+		D67A099723B1B436001E9AF0 /* GGSBSleep.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A099623B1B436001E9AF0 /* GGSBSleep.m */; };
 		D6B58584230CF26B006E233E /* IVWeightLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B58583230CF26B006E233E /* IVWeightLine.m */; };
 		D6B58588230CF299006E233E /* WeightLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B58587230CF299006E233E /* WeightLineViewController.m */; };
 		D6B5858B230CF6C7006E233E /* IVCoinLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B58589230CF6C7006E233E /* IVCoinLine.m */; };
@@ -75,6 +77,10 @@
 		D668294A22A679B8002489F3 /* IVTimeBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVTimeBar.m; sourceTree = "<group>"; };
 		D668294E22A771F0002489F3 /* TimeBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeBarViewController.h; sourceTree = "<group>"; };
 		D668294F22A771F0002489F3 /* TimeBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeBarViewController.m; sourceTree = "<group>"; };
+		D67A099223B1B14E001E9AF0 /* IVSleepLineArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVSleepLineArea.h; sourceTree = "<group>"; };
+		D67A099323B1B14E001E9AF0 /* IVSleepLineArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVSleepLineArea.m; sourceTree = "<group>"; };
+		D67A099523B1B436001E9AF0 /* GGSBSleep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GGSBSleep.h; sourceTree = "<group>"; };
+		D67A099623B1B436001E9AF0 /* GGSBSleep.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GGSBSleep.m; sourceTree = "<group>"; };
 		D6B58582230CF26B006E233E /* IVWeightLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVWeightLine.h; sourceTree = "<group>"; };
 		D6B58583230CF26B006E233E /* IVWeightLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVWeightLine.m; sourceTree = "<group>"; };
 		D6B58586230CF299006E233E /* WeightLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeightLineViewController.h; sourceTree = "<group>"; };
@@ -233,6 +239,10 @@
 			children = (
 				D6289F0B226090FB002B9588 /* IVSleepBars.h */,
 				D6289F0C226090FB002B9588 /* IVSleepBars.m */,
+				D67A099223B1B14E001E9AF0 /* IVSleepLineArea.h */,
+				D67A099323B1B14E001E9AF0 /* IVSleepLineArea.m */,
+				D67A099523B1B436001E9AF0 /* GGSBSleep.h */,
+				D67A099623B1B436001E9AF0 /* GGSBSleep.m */,
 			);
 			path = SleepBars;
 			sourceTree = "<group>";
@@ -424,6 +434,7 @@
 				D6289F0A22609092002B9588 /* SleepBarViewController.m in Sources */,
 				D6273E6E224C75990081BFEE /* ViewController.m in Sources */,
 				D6289F0D226090FB002B9588 /* IVSleepBars.m in Sources */,
+				D67A099423B1B14E001E9AF0 /* IVSleepLineArea.m in Sources */,
 				D668294B22A679B8002489F3 /* IVTimeBar.m in Sources */,
 				D6C98F89225366900083D03A /* IVSportsCurve.m in Sources */,
 				D6273E79224C759D0081BFEE /* main.m in Sources */,
@@ -432,6 +443,7 @@
 				D6B58584230CF26B006E233E /* IVWeightLine.m in Sources */,
 				D6273E6B224C75990081BFEE /* AppDelegate.m in Sources */,
 				D668295022A771F0002489F3 /* TimeBarViewController.m in Sources */,
+				D67A099723B1B436001E9AF0 /* GGSBSleep.m in Sources */,
 				D6273E91224C79350081BFEE /* IVRriScatter.m in Sources */,
 				D6289F0522608B87002B9588 /* SprotsCurveViewController.m in Sources */,
 				D60B11C622B8E6E1008EAC66 /* IVRateLine.m in Sources */,
@@ -595,12 +607,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = L855ZMKEYR;
 				INFOPLIST_FILE = IVCharts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iwown.simpleSport.IVCharts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -612,12 +626,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = L855ZMKEYR;
 				INFOPLIST_FILE = IVCharts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iwown.simpleSport.IVCharts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

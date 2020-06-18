@@ -55,7 +55,6 @@
 }
 
 - (void)drawLine {
-    NSLog(@"%s",__FUNCTION__);
     CGFloat hY = _height - 20;
     CGFloat gap = 10;
     CGFloat w = _gapW;
@@ -83,7 +82,6 @@
         } else {
             y = hY * (1- ([_arr[i] floatValue] - _yMin)/(_yMax - _yMin)) + gap;
         }
-        NSLog(@"======>>>> %f:%f",x,y);
         if (i > 0) {
             /*折线*/
             [lineGraph addLineToPoint:CGPointMake(x, y)];

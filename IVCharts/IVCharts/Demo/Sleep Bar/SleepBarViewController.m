@@ -8,10 +8,12 @@
 
 #import "SleepBarViewController.h"
 #import "IVSleepBars.h"
+#import "IVSleepLineArea.h"
+#import "GGSBSleep.h"
 
-@interface SleepBarViewController ()
-{
+@interface SleepBarViewController () {
     IVSleepBars *_bars;
+    IVSleepLineArea *_lineArea;
 }
 @end
 
@@ -27,8 +29,12 @@
 
 - (void)initUI {
     self.view.backgroundColor = [UIColor whiteColor];
-    _bars = [[IVSleepBars alloc] initWithFrame:CGRectMake(0, 100, 375, 375)];
+    _bars = [[IVSleepBars alloc] initWithFrame:CGRectMake(0, 100, 375, 200)];
     [self.view addSubview:_bars];
+    
+    _lineArea = [[IVSleepLineArea alloc] initWithFrame:CGRectMake(0, 350, 375, 200)];
+    [_lineArea setBackgroundColor:[UIColor blueColor]];
+    [self.view addSubview:_lineArea];
 }
 
 - (void)reloadData {
@@ -37,7 +43,7 @@
     int type = 0;
     int startMinute = et;
     NSMutableArray *itemArr = [[NSMutableArray alloc] initWithCapacity:0];
-    for (int i = 0; i < 13; i ++) {
+    for (int i = 0; i < 19; i ++) {
         int gap = arc4random()%30 + i;
         st = et;
         et = st + gap;
@@ -49,10 +55,12 @@
             et = st;
         }else if (i == 4) {
             type = 6;
-        }else if (i % 2 > 0) {
+        }else if (i % 3 == 0) {
             type = 3;
-        }else {
+        }else if (i % 3 == 1) {
             type = 4;
+        }else {
+            type = 7;
         }
         GGSBItem *item = [[GGSBItem alloc] init];
         item.st = st;
@@ -72,6 +80,9 @@
     sleepModel.end_time = eDate;
     [_bars setSleepModel:sleepModel];
     [_bars reload];
+    
+    [_lineArea setSleepModel:sleepModel];
+    [_lineArea reload];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

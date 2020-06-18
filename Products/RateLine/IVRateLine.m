@@ -98,11 +98,9 @@
         tempP = p;
     }
     
-    [linePath setLineWidth:1.5];    
+    [linePath setLineWidth:2];
     [linePath setLineJoinStyle:kCGLineJoinRound];
     [linePath setLineCapStyle:kCGLineCapRound];
-    CGFloat lengths[] = {2,0};
-    [linePath setLineDash:lengths count:2 phase:0];
     if (_lineColor) {
         [_lineColor set];
     } else {
