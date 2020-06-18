@@ -345,7 +345,7 @@
 }
 
 - (void)endAnimation:(UIScrollView *)scrollView {
-    NSLog(@"%s :: %ld",__func__,_scrollIndex);
+    NSLog(@"%s :: %ld",__func__,(long)_scrollIndex);
     [UIView animateWithDuration:0.2 animations:^{
         [scrollView setContentOffset:CGPointMake(self->_scrollIndex *self->_gapW, scrollView.bounds.origin.y)];
         [self showGrayLabelAniamtion:scrollView.bounds.size.height index:self->_scrollIndex];
